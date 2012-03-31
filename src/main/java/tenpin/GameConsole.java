@@ -90,12 +90,12 @@ public class GameConsole {
     }
 
     private void playFrame(Integer numberOfPlayers) {
-        for (int playerId = 1; playerId <= numberOfPlayers; playerId++) {
-            String playerName = game.getPlayerName(playerId-1);
+        for (int playerId = 0; playerId < numberOfPlayers; playerId++) {
+            String playerName = game.getPlayerName(playerId);
             logger.debug("playerId: {}", playerId);
-            console.printf("Player %s - %s's turn....", playerId,playerName);
+            console.printf("Player %s - %s's turn....", playerId+1,playerName);
             takeTurn(playerId, playerName);
-            console.printf("%s %n %n", playerName + " has " + game.findScore(playerId-1) + " points");
+            console.printf("%s %n %n", playerName + " has " + game.findScore(playerId) + " points");
         }
     }
 
@@ -106,7 +106,7 @@ public class GameConsole {
             Integer ballScore = getBallScore(playerName);
             logger.debug("ballScore:{}", ballScore);
             try {
-                playerFrameFinished = game.submitScore(playerId-1, ballScore);
+                playerFrameFinished = game.submitScore(playerId, ballScore);
             } catch (FrameScoreException frameScoreException) {
                 logger.error("frameScoreException:"+frameScoreException.getMessage());
                 console.printf("%s",frameScoreException.getMessage());
