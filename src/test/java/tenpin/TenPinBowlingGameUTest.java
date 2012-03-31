@@ -7,7 +7,7 @@ import tenpin.game.Game;
 public class TenPinBowlingGameUTest {
     private static final int PLAYER_1 = 0;
     private static final int PLAYER_2 = 1;
-    private static final String PLAYER_1_NAME = "Roy Munson";
+
 
 
     @Test
@@ -151,4 +151,5 @@ public class TenPinBowlingGameUTest {
         Assert.assertEquals(expectedScore, game.findScore(PLAYER_2));
 
     }
+
 }

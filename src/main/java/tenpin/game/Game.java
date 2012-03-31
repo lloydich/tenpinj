@@ -2,14 +2,15 @@ package tenpin.game;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tenpin.playerscore.Player;
+import tenpin.player.Player;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Game {
 
     private final Logger logger = LoggerFactory.getLogger(Game.class);
-    private GameScoresCalculator gameScoresCalculator = null;
+    public GameScoresCalculator gameScoresCalculator = null;
 
     private List<Player> players = new ArrayList<Player>();
 
@@ -66,4 +67,15 @@ public class Game {
         }
         return true;
     }
+
+    public String getScoreBoard() {
+         return new ScoreBoard().getScoreBoard(players);
+
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+
 }

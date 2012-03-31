@@ -2,7 +2,7 @@ package tenpin.game;
 
 import org.junit.Assert;
 import org.junit.Test;
-import tenpin.playerscore.Player;
+import tenpin.player.Player;
 
 import java.util.ArrayList;
 import java.util.List;

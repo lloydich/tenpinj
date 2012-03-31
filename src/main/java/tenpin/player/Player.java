@@ -1,10 +1,11 @@
-package tenpin.playerscore;
+package tenpin.player;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tenpin.game.GameValidator;
 import tenpin.frame.Frame;
 import tenpin.frame.FrameFactory;
+import tenpin.frame.FrameScore;
+import tenpin.game.GameValidator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +70,13 @@ public class Player {
             playerScoreCalculator = new PlayerScoreCalculator(frames);
             playerScoreCalculator.updatePreviousFrameScores(currentFrame);
         }
+    }
+
+    public FrameScore getFrameScore(int frameNumber) {
+        if (frameNumber + 1 <= frames.size()) {
+            return frames.get(frameNumber).getFrameScore();
+        }
+        return null;
     }
 
     public Integer getTotalPoints() {

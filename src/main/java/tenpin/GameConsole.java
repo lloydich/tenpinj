@@ -38,8 +38,13 @@ public class GameConsole {
         setupPlayers(numberOfPlayers);
         playFrames(numberOfPlayers);
         printWinners();
+        printScores();
         printTeamScore();
 
+    }
+
+    private void printScores() {
+        console.printf(game.getScoreBoard());
     }
 
     private void printTeamScore() {

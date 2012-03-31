@@ -2,7 +2,7 @@ package tenpin.game;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tenpin.playerscore.Player;
+import tenpin.player.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,4 +50,6 @@ public class GameScoresCalculator {
         }
         return teamScore;
     }
+
+
 }
