@@ -69,8 +69,11 @@ public class Game {
     }
 
     public String getScoreBoard() {
-         return new ScoreBoard().getScoreBoard(players);
-
+        String playerScoreBoards="";
+        for (Player player : players) {
+            playerScoreBoards += new ScoreBoard().getScoreBoard(player);
+        }
+         return playerScoreBoards;
     }
 
     public void setPlayers(List<Player> players) {
