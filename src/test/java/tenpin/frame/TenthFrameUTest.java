@@ -73,13 +73,15 @@ public class TenthFrameUTest {
         frame = new TenthFrame();
         frame.submitBallScore(10);
         frame.submitBallScore(0);
+        frame.submitBallScore(0);
         expected = 10;
         Assert.assertEquals(expected, frame.getFrameScore().getTotalScore());
 
         frame = new TenthFrame();
         frame.submitBallScore(10);
         frame.submitBallScore(0);
-        expected = 10;
+        frame.submitBallScore(1);
+        expected = 11;
         Assert.assertEquals(expected, frame.getFrameScore().getTotalScore());
 
         frame = new TenthFrame();
@@ -113,14 +115,6 @@ public class TenthFrameUTest {
         frame.submitBallScore(0);
     }
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void testSubmitThirdBallWhenDoesntHaveOneWithStrike() throws Exception {
-        Frame frame = new TenthFrame();
-        frame.submitBallScore(10);
-        frame.submitBallScore(1);
-        frame.submitBallScore(0);
-    }
-
     @Test
     public void isFrameInPlay() {
         Frame frame = new TenthFrame();
@@ -137,7 +131,7 @@ public class TenthFrameUTest {
         frame = new TenthFrame();
         frame.submitBallScore(10);
         frame.submitBallScore(0);
-        Assert.assertFalse(frame.isFrameInPlay());
+        Assert.assertTrue(frame.isFrameInPlay());
 
         frame = new TenthFrame();
         frame.submitBallScore(0);

@@ -41,7 +41,7 @@ public class TenthFrame extends Frame {
         Integer totalScore = frameScore.getFirstBallScore() + ballScore;
          validateTotalScoreForTwoPins(totalScore, frameScore.getFirstBallScore() );
         frameScore.setSecondBallScore(ballScore);
-        if (frameScore.hasDoubleStrike() || frameScore.hasSpare()) {
+        if (frameScore.isAStrike() || frameScore.hasSpare()) {
             hasThirdBall = true;
         } else {
             frameScore.setTotalScore(frameScore.getFirstBallScore() + frameScore.getSecondBallScore());
