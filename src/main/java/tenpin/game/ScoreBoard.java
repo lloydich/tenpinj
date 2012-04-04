@@ -7,16 +7,16 @@ public class ScoreBoard {
     private  Integer gameScore= 0;
     
     public String getScoreBoard(Player player) {
-            String scoreBoard = "";
-                scoreBoard += ("\nPLAYER " + player.getName());
-                scoreBoard += ("\n___________ ___________ ___________ ___________ ___________ ___________ ___________ ___________ ___________ ___________");
-                scoreBoard += ("\n|    |    | |    |    | |    |    | |    |    | |    |    | |    |    | |    |    | |    |    | |    |    | |    |    |");
-                scoreBoard += ("\n| " + getBallScore(player, 0, 1) + " | " +  getBallScore(player, 0, 2) + " | | " +  getBallScore(player, 1, 1) + " | " +  getBallScore(player, 1, 2) + " | | " +  getBallScore(player, 2, 1) + " | " +  getBallScore(player, 2, 2) + " | | " +  getBallScore(player, 3, 1) + " | " +  getBallScore(player, 3, 2) + " | | " +  getBallScore(player, 4, 1) + " | " +  getBallScore(player, 4, 2) + " | | " +  getBallScore(player, 5, 1) + " | " +  getBallScore(player, 5, 2) + " | | " +  getBallScore(player, 6, 1) + " | " +  getBallScore(player, 6, 2) + " | | " +  getBallScore(player, 7, 1) + " | " +  getBallScore(player, 7, 2) + " | | " +  getBallScore(player, 8, 1) + " | " +  getBallScore(player, 8, 2) + " | | " +  getBallScore(player, 9, 1) + " | " +   getBallScore(player, 9, 2) + " |");
-                scoreBoard += ("\n|    |____| |    |____| |    |____| |    |____| |    |____| |    |____| |    |____| |    |____| |    |____| |    |____|");
-                scoreBoard += ("\n|         | |         | |         | |         | |         | |         | |         | |         | |         | |         |");
-                scoreBoard += ("\n|   " + getGameScore(0, player) + "   | |   " + getGameScore(1, player) + "   | |   " + getGameScore(2, player) + "   | |   " + getGameScore(3, player) + "   | |   " + getGameScore(4, player) + "   | |   " + getGameScore(5, player) + "   | |   " + getGameScore(6, player) + "   | |   " + getGameScore(7, player) + "   | |   " + getGameScore(8, player) + "   | |   " + getGameScore(9, player) + "   |");
-                scoreBoard += ("\n|_________| |_________| |_________| |_________| |_________| |_________| |_________| |_________| |_________| |_________|\n\n");
-            return scoreBoard;
+            StringBuilder scoreBoard =new StringBuilder();
+                scoreBoard.append ("\nPLAYER " + player.getName());
+                scoreBoard.append("\n___________ ___________ ___________ ___________ ___________ ___________ ___________ ___________ ___________ ___________");
+                scoreBoard.append ("\n|    |    | |    |    | |    |    | |    |    | |    |    | |    |    | |    |    | |    |    | |    |    | |    |    |");
+                scoreBoard.append("\n| " + getBallScore(player, 0, 1) + " | " +  getBallScore(player, 0, 2) + " | | " +  getBallScore(player, 1, 1) + " | " +  getBallScore(player, 1, 2) + " | | " +  getBallScore(player, 2, 1) + " | " +  getBallScore(player, 2, 2) + " | | " +  getBallScore(player, 3, 1) + " | " +  getBallScore(player, 3, 2) + " | | " +  getBallScore(player, 4, 1) + " | " +  getBallScore(player, 4, 2) + " | | " +  getBallScore(player, 5, 1) + " | " +  getBallScore(player, 5, 2) + " | | " +  getBallScore(player, 6, 1) + " | " +  getBallScore(player, 6, 2) + " | | " +  getBallScore(player, 7, 1) + " | " +  getBallScore(player, 7, 2) + " | | " +  getBallScore(player, 8, 1) + " | " +  getBallScore(player, 8, 2) + " | | " +  getBallScore(player, 9, 1) + " | " +   getBallScore(player, 9, 2) + " |");
+                scoreBoard.append ("\n|    |____| |    |____| |    |____| |    |____| |    |____| |    |____| |    |____| |    |____| |    |____| |    |____|");
+                scoreBoard.append ("\n|         | |         | |         | |         | |         | |         | |         | |         | |         | |         |");
+                scoreBoard.append ("\n|   " + getGameScore(0, player) + "   | |   " + getGameScore(1, player) + "   | |   " + getGameScore(2, player) + "   | |   " + getGameScore(3, player) + "   | |   " + getGameScore(4, player) + "   | |   " + getGameScore(5, player) + "   | |   " + getGameScore(6, player) + "   | |   " + getGameScore(7, player) + "   | |   " + getGameScore(8, player) + "   | |   " + getGameScore(9, player) + "   |");
+                scoreBoard.append ("\n|_________| |_________| |_________| |_________| |_________| |_________| |_________| |_________| |_________| |_________|\n\n");
+            return scoreBoard.toString();
         }
 
     private String getBallScore(Player player, Integer frameNumber, Integer ballNumber) {
